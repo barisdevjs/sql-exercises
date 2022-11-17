@@ -80,5 +80,36 @@ WHERE Director='Andrew Stanton'
 
 -- Lesson 16: Creating tables
 
+--Create a new table named Database with the following columns:
+-- Name A string (text)  Version A number (floating point)   Download_count An integer count 
+
+CREATE TABLE  Database  (
+    name TEXT,
+    version FLOAT,  
+    download_count INTEGER
+)
+
+
+-- Lesson 17: Altering tables
+
+--Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+ALTER TABLE Movies ADD COLUMN  Aspect_ratio FLOAT;
+SELECT * FROM movies;
+
+--Add another column named Language with a TEXT data type to store the language that the movie was released in.
+-- Ensure that the default for this language is English.
+ALTER TABLE Movies ADD Language TEXT NOT NULL DEFAULT 'English';
+SELECT * FROM movies;
+
+
+
+--Lesson 18: Dropping tables
+
+--We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+DROP TABLE Movies
+
+--And drop the BoxOffice table as well 
+DROP TABLE BoxOffice
+
 
 
