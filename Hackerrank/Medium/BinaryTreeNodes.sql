@@ -1,0 +1,17 @@
+SELECT N,
+    CASE
+        WHEN P IS null THEN 'Root'
+        WHEN N IN (SELECT  P FROM BST) THEN  'Inner'
+        ELSE 'Leaf' END AS X FROM BST ORDER BY N;
+
+
+
+SELECT N,
+    CASE 
+    WHEN P IS NULL THEN 'Root' 
+    ELSE
+    CASE WHEN N IN (SELECT DISTINCT P FROM BST) THEN 'Inner'
+    ELSE 'Leaf' END
+    END AS node_type
+FROM BST
+ORDER BY N ASC;
