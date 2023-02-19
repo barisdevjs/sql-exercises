@@ -5,3 +5,11 @@ SELECT concat('There are a total of ', COUNT(Occupation), ' ', LOWER(Occupation)
 FROM OCCUPATIONS
 GROUP BY Occupation
 ORDER BY result ASC;
+
+SELECT CONCAT(NAME, '(', LEFT(OCCUPATION, 1), ')') as col
+FROM  OCCUPATIONS
+UNION ALL
+SELECT CONCAT('There are a total of ', COUNT(OCCUPATION), ' ', lower(OCCUPATION), 's.') as col
+FROM OCCUPATIONS
+GROUP BY OCCUPATION
+ORDER BY col;
